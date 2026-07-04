@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSmart - Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LANGUAGE -->
+<div class="top-bar">
+    <button onclick="setLanguage('en')">English 🇬🇧</button>
+    <button onclick="setLanguage('fr')">Français 🇫🇷</button>
+</div>
+
+<h1 id="weatherMain">🌦️ Weather Forecast</h1>
+
+<!-- WEATHER DISPLAY -->
+<div class="weather-box">
+
+    <h2 id="weatherTitle">Select a day 🌤️</h2>
+    <p id="temp">Temperature will appear here</p>
+
+</div>
+
+<!-- FORECAST -->
+<h3 id="selectDay">Select Day 📅</h3>
+<ul>
+    <li>Day 1: Sunny ☀️ - 31°C</li>
+    <li>Day 2: Rainy 🌧️ - 27°C</li>
+    <li>Day 3: Cloudy ☁️ - 28°C</li>
+</ul>
+
+<!-- FARMING ADVICE -->
+<div class="advice-box">
+    <h2 id="adviceTitle">🌱 Farming Advice</h2>
+    <p id="advice">Click a day to see farming advice</p>
+</div>
+
+<!-- BUTTONS -->
+<h3>Select Day 📅</h3>
+
+<button onclick="changeWeather('today')">1</button>
+<button onclick="changeWeather('day1')">2</button>
+<button onclick="changeWeather('day2')">3</button>
+<button onclick="changeWeather('day3')">4</button>
+
+<br><br>
+
+<a href="index.html">⬅ Back Home</a>
+
+<!-- IMPORTANT: ONE SCRIPT FILE ONLY -->
+<script src="script.js"></script>
+
+</body>
+</html>

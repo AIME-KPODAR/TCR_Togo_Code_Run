@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSmart - Crop Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<h1 id="cropTitle">🌾 Crop Guide</h1>
+
+<p id="cropSubtitle">
+Search for crops and learn how to grow them better in Togo
+</p>
+
+
+<input type="text" id="searchBox"
+placeholder="Search crop (maize, rice, cassava...)"
+onkeyup="searchCrop()">
+
+<div class="crop-card">
+    <h2 id="maizeName">🌽 Maize</h2>
+    <p id="maizeSeason">Season: Rainy season</p>
+    <p id="maizeAdvice">Advice: Use fertilizer after 2 weeks</p>
+</div>
+
+<div class="crop-card">
+    <h2 id="riceName">🌾 Rice</h2>
+    <p id="riceSeason">Season: Wet lands</p>
+    <p id="riceAdvice">Advice: Needs constant water</p>
+</div>
+
+<div class="crop-card">
+    <h2 id="cassavaName">🥔 Cassava</h2>
+    <p id="cassavaSeason">Season: All year</p>
+    <p id="cassavaAdvice">Advice: Resistant to drought</p>
+</div>
+
+<br>
+<a href="index.html">⬅ Back Home</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>

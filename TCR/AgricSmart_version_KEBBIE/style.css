@@ -1,0 +1,91 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #f0fff0;
+}
+
+.top-bar {
+    text-align: right;
+    padding: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 8px;
+}
+
+.menu a {
+    display: block;
+    margin: 15px;
+    padding: 15px;
+    background: green;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    display: block;
+    margin: 15px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    width: 250px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.weather-box, .advice-box {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.crop-card {
+    background: white;
+    margin: 15px auto;
+    padding: 15px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.price-card {
+    background: white;
+    margin: 15px auto;
+    padding: 15px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+#preview {
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9fff9;
+    border-left: 5px solid green;
+    border-radius: 10px;
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>AgriSmart — Agriculture Intelligente</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="goHome()">
+    <div class="nav-logo-icon">🌿</div>
+    <div class="nav-logo-text">Agri<span>Smart</span></div>
+  </div>
+  <div class="nav-lang">
+    <button class="lang-btn active" onclick="setLang('fr',this)">FR</button>
+    <button class="lang-btn" onclick="setLang('ewe',this)">EWÉ</button>
+    <button class="lang-btn" onclick="setLang('kab',this)">KAB</button>
+  </div>
+  <div class="nav-profile">🌾</div>
+</nav>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- PAGE ACCUEIL -->
+  <div class="page active" id="page-home">
+    <div class="home-hero">
+      <div class="hello-text" data-i18n="hello">Bonjour, agriculteur</div>
+      <div class="home-welcome">Cultivez <span>plus intelligent</span> chaque jour</div>
+      <div class="weather-strip">
+        <div class="weather-icon">⛅</div>
+        <div>
+          <div class="weather-temp">28°C</div>
+          <div class="weather-desc">Partiellement nuageux · Lomé</div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <div style="font-size:11px;color:rgba(255,255,255,0.45)">Humidité</div>
+          <div style="font-size:14px;font-weight:600;color:#fff">72%</div>
+        </div>
+      </div>
+      <div class="weather-alert">
+        <div style="font-size:16px">⚠️</div>
+        <div class="weather-alert-text" data-i18n="alert_rain">Fortes pluies prévues dans 48h — Reportez l'épandage d'engrais pour éviter le lessivage.</div>
+      </div>
+    </div>
+
+    <div class="quick-grid">
+      <div class="quick-card" onclick="showPage('scanner')">
+        <div class="quick-icon">📷</div>
+        <div class="quick-name" data-i18n="q_scan">Scanner étiquette</div>
+        <div class="quick-desc" data-i18n="q_scan_d">Identifier un produit en quelques secondes</div>
+      </div>
+      <div class="quick-card" onclick="showPage('maladies')">
+        <div class="quick-icon">🔬</div>
+        <div class="quick-name" data-i18n="q_disease">Diagnostiquer</div>
+        <div class="quick-desc" data-i18n="q_disease_d">Photographiez une feuille malade</div>
+      </div>
+      <div class="quick-card" onclick="showPage('meteo')">
+        <div class="quick-icon">🌦️</div>
+        <div class="quick-name" data-i18n="q_meteo">Météo agricole</div>
+        <div class="quick-desc" data-i18n="q_meteo_d">Alertes et conseils personnalisés</div>
+      </div>
+      <div class="quick-card" onclick="showPage('marche')">
+        <div class="quick-icon">📊</div>
+        <div class="quick-name" data-i18n="q_market">Cours du marché</div>
+        <div class="quick-desc" data-i18n="q_market_d">Prix réels des marchés locaux</div>
+      </div>
+    </div>
+
+    <div class="alert-card">
+      <div class="alert-header">
+        <span style="font-size:18px">📅</span>
+        <div class="alert-title" data-i18n="cal_title">Calendrier agricole — Juillet</div>
+      </div>
+      <div class="cal-items">
+        <div class="cal-item">
+          <div class="cal-dot" style="background:#16A34A"></div>
+          <div>
+            <div class="cal-crop">Maïs</div>
+            <div class="cal-action">Épandage engrais NPK</div>
+          </div>
+          <div class="cal-date">5 juil.</div>
+        </div>
+        <div class="cal-item">
+          <div class="cal-dot" style="background:#D97706"></div>
+          <div>
+            <div class="cal-crop">Manioc</div>
+            <div class="cal-action">Contrôle des maladies</div>
+          </div>
+          <div class="cal-date">12 juil.</div>
+        </div>
+        <div class="cal-item">
+          <div class="cal-dot" style="background:#7C3AED"></div>
+          <div>
+            <div class="cal-crop">Igname</div>
+            <div class="cal-action">Début de récolte</div>
+          </div>
+          <div class="cal-date">20 juil.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE SCANNER -->
+  <div class="page" id="page-scanner">
+    <div class="scanner-top">
+      <div class="camera-frame">
+        <div class="cam-corners"></div>
+        <div class="cam-corner-br"></div>
+        <div class="cam-corner-bl"></div>
+        <div class="scan-line-anim" id="scanLine"></div>
+        <div class="cam-label" data-i18n="cam_label">Pointez vers l'étiquette du produit</div>
+      </div>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Rechercher un produit..." id="searchInput" oninput="filterProducts()">
+      </div>
+      <div class="scan-btns">
+        <button class="scan-btn active-btn" onclick="simulateScan()">📷 Scanner</button>
+        <button class="scan-btn" onclick="filterProducts()">📋 Catalogue</button>
+      </div>
+    </div>
+
+    <div class="product-list" id="productList">
+      <div class="section-label">Produits récents</div>
+    </div>
+  </div>
+
+  <!-- PAGE MALADIES -->
+  <div class="page" id="page-maladies">
+    <div class="page-header">
+      <div class="page-title">Diagnostic IA</div>
+      <div class="page-sub">Photographiez une feuille malade pour identifier la maladie</div>
+    </div>
+
+    <div class="disease-upload" onclick="simulateDisease()">
+      <div class="upload-icon">🍃</div>
+      <div class="upload-title" data-i18n="upload_title">Prendre une photo de la plante</div>
+      <div class="upload-sub" data-i18n="upload_sub">Appuyez pour ouvrir la caméra · Résultat en 3 secondes</div>
+    </div>
+
+    <div class="disease-result" id="diseaseResult">
+      <div class="disease-result-header">
+        <div>
+          <div class="disease-name" id="diseaseName">Rouille du maïs</div>
+          <div class="disease-latin" id="diseaseLatin">Puccinia sorghi</div>
+        </div>
+        <div class="disease-confidence">95% ✓</div>
+      </div>
+      <div class="p">
+        <div class="section-label">Remèdes naturels recommandés</div>
+        <div id="remedyList"></div>
+      </div>
+    </div>
+
+    <div style="padding:0 1.25rem .5rem">
+      <div class="section-label">Maladies fréquentes au Togo</div>
+    </div>
+    <div class="disease-gallery" id="diseaseGallery"></div>
+  </div>
+
+  <!-- PAGE CULTURES -->
+  <div class="page" id="page-cultures">
+    <div class="page-header">
+      <div class="page-title">Guide des Cultures</div>
+      <div class="page-sub">Calendriers et conseils pour les cultures du Togo</div>
+    </div>
+    <div class="crop-grid" id="cropGrid"></div>
+  </div>
+
+  <!-- PAGE MARCHE -->
+  <div class="page" id="page-marche">
+    <div class="page-header">
+      <div class="page-title">Cours du Marché</div>
+      <div class="page-sub">Prix réels · Marchés de Lomé & Notsé</div>
+    </div>
+    <div class="market-header-strip">
+      <div style="font-size:12px;color:rgba(255,255,255,0.7)">📍 Marché de Lomé</div>
+      <div class="market-update">Mis à jour : 29 juin 2026</div>
+    </div>
+
+    <div class="tip-card" style="margin-top:1rem">
+      <div class="tip-card-title">💡 Conseil du jour</div>
+      <div class="tip-card-body">Le prix du maïs est en hausse de 8% cette semaine. Bon moment pour vendre votre stock si vous en avez.</div>
+    </div>
+
+    <div class="market-items" id="marketItems"></div>
+  </div>
+
+  <!-- PAGE MÉTÉO -->
+  <div class="page" id="page-meteo">
+    <div class="meteo-hero">
+      <div class="meteo-location">📍 Lomé, Région Maritime</div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div class="meteo-big-temp">28°</div>
+          <div class="meteo-condition">Partiellement nuageux</div>
+          <div class="meteo-feels">Ressenti 31° · Précip. 65%</div>
+        </div>
+        <div class="meteo-icon">⛅</div>
+      </div>
+      <div class="meteo-metrics">
+        <div class="meteo-metric"><div class="meteo-metric-val">72%</div><div class="meteo-metric-label">Humidité</div></div>
+        <div class="meteo-metric"><div class="meteo-metric-val">12 km/h</div><div class="meteo-metric-label">Vent</div></div>
+        <div class="meteo-metric"><div class="meteo-metric-val">1012</div><div class="meteo-metric-label">Pression hPa</div></div>
+      </div>
+      <div class="forecast-strip">
+        <div class="forecast-day today"><div class="forecast-day-name">Auj.</div><div class="forecast-day-icon">⛅</div><div class="forecast-day-temp">28°</div></div>
+        <div class="forecast-day"><div class="forecast-day-name">Lun.</div><div class="forecast-day-icon">🌧️</div><div class="forecast-day-temp">26°</div></div>
+        <div class="forecast-day"><div class="forecast-day-name">Mar.</div><div class="forecast-day-icon">⛈️</div><div class="forecast-day-temp">24°</div></div>
+        <div class="forecast-day"><div class="forecast-day-name">Mer.</div><div class="forecast-day-icon">🌤️</div><div class="forecast-day-temp">29°</div></div>
+        <div class="forecast-day"><div class="forecast-day-name">Jeu.</div><div class="forecast-day-icon">☀️</div><div class="forecast-day-temp">31°</div></div>
+        <div class="forecast-day"><div class="forecast-day-name">Ven.</div><div class="forecast-day-icon">🌤️</div><div class="forecast-day-temp">30°</div></div>
+        <div class="forecast-day"><div class="forecast-day-name">Sam.</div><div class="forecast-day-icon">☀️</div><div class="forecast-day-temp">32°</div></div>
+      </div>
+    </div>
+    <div class="agri-alerts">
+      <div class="section-label">Alertes agricoles</div>
+      <div class="agri-alert-item">
+        <div class="agri-alert-icon">🌧️</div>
+        <div>
+          <div class="agri-alert-title">Fortes pluies dans 48h</div>
+          <div class="agri-alert-desc">Reportez l'épandage d'engrais et de pesticides. Risque de lessivage élevé. Profitez-en pour sarcler.</div>
+        </div>
+      </div>
+      <div class="agri-alert-item" style="border-left-color:var(--success)">
+        <div class="agri-alert-icon">☀️</div>
+        <div>
+          <div class="agri-alert-title">Bonne fenêtre jeudi–vendredi</div>
+          <div class="agri-alert-desc">Conditions idéales pour le semis du maïs et l'application de traitements foliaires.</div>
+        </div>
+      </div>
+      <div class="agri-alert-item" style="border-left-color:var(--info)">
+        <div class="agri-alert-icon">💧</div>
+        <div>
+          <div class="agri-alert-title">Humidité favorable</div>
+          <div class="agri-alert-desc">L'humidité à 72% est idéale pour la germination. Période optimale pour les nouvelles plantations.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end content -->
+
+<!-- BOTTOM TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-item active" onclick="showPage('home')" id="tab-home">
+    <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+    <span class="tab-label">Accueil</span>
+  </button>
+  <button class="tab-item" onclick="showPage('scanner')" id="tab-scanner">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h2v2h-2zM18 14h3M14 18h2M18 18h3M18 21h3M21 14v7"/></svg>
+    <span class="tab-label">Scanner</span>
+  </button>
+  <button class="tab-item" onclick="showPage('maladies')" id="tab-maladies">
+    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35M11 8v3M11 14v.01"/></svg>
+    <span class="tab-label">Diagnostic</span>
+  </button>
+  <button class="tab-item" onclick="showPage('cultures')" id="tab-cultures">
+    <svg viewBox="0 0 24 24"><path d="M12 2a9 9 0 110 18A9 9 0 0112 2zM12 8v8M8.5 11.5l3.5-3.5 3.5 3.5"/></svg>
+    <span class="tab-label">Cultures</span>
+  </button>
+  <button class="tab-item" onclick="showPage('marche')" id="tab-marche">
+    <svg viewBox="0 0 24 24"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9M17 13l2 9M9 21h6"/></svg>
+    <span class="tab-label">Marché</span>
+  </button>
+</div>
+
+<!-- PRODUCT DETAIL OVERLAY -->
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-hero">
+    <button class="detail-back" onclick="closeDetail()">← Retour</button>
+    <div class="detail-product-row">
+      <div class="detail-emoji" id="detailEmoji">🌿</div>
+      <div>
+        <div class="detail-name" id="detailName">Produit</div>
+        <div class="detail-type" id="detailType">Catégorie</div>
+      </div>
+    </div>
+    <div class="audio-bar">
+      <button class="play-btn" onclick="togglePlay(this)">▶</button>
+      <div class="audio-waveform" id="audioWave"></div>
+      <div class="audio-time">0:34</div>
+    </div>
+  </div>
+
+  <div class="mode-tabs">
+    <button class="mode-tab active" onclick="setMode('text',this)">📝 Texte</button>
+    <button class="mode-tab" onclick="setMode('audio',this)">🔊 Audio</button>
+    <button class="mode-tab" onclick="setMode('video',this)">📹 Vidéo</button>
+  </div>
+
+  <div class="p" id="detailContent"></div>
+</div>
+
+<!-- CROP DETAIL OVERLAY -->
+<div class="detail-overlay" id="cropOverlay">
+  <div class="detail-hero">
+    <button class="detail-back" onclick="closeCropDetail()">← Retour</button>
+    <div class="detail-product-row">
+      <div class="detail-emoji" id="cropDetailEmoji">🌽</div>
+      <div>
+        <div class="detail-name" id="cropDetailName">Culture</div>
+        <div class="detail-type" id="cropDetailRegion">Région</div>
+      </div>
+    </div>
+  </div>
+  <div class="p" id="cropDetailContent"></div>
+</div>
+
+<script src="page.js"></script>
+</body>
+</html>

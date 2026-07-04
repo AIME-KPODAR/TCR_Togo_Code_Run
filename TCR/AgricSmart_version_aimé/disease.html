@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgriSmart - Disease Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 id="diseaseTitle">🦠 Disease Detection</h1>
+<p id="diseaseSubtitle">Upload a plant image to detect diseases</p>
+
+<label for="imageInput" class="upload-btn" id="uploadImage">
+    📁 Upload Image
+</label>
+
+<input type="file" id="imageInput" onchange="previewImage()" hidden>
+
+<p id="fileText">No file chosen</p>
+
+<br><br>
+
+<img id="preview" width="200">
+
+<br><br>
+
+<button onclick="analyzeImage()" id="analyzeBtn">
+    Analyze 🌱
+</button>
+
+<div id="result"></div>
+
+<br>
+<a href="index.html" id="backHome">⬅ Back Home</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>
