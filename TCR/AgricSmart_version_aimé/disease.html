@@ -2,38 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriSmart - Disease Detection</title>
-    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<h1 id="diseaseTitle">🦠 Disease Detection</h1>
-<p id="diseaseSubtitle">Upload a plant image to detect diseases</p>
+<!-- HEADER STYLE AGRISMART -->
+<header class="page-header">
+    <h1 id="diseaseTitle">🦠 Disease Detection</h1>
+    <p id="diseaseSubtitle">
+        Upload a plant image to detect diseases
+    </p>
+</header>
 
-<label for="imageInput" class="upload-btn" id="uploadImage">
-    📁 Upload Image
-</label>
+<!-- LANGUAGE SWITCH -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">English 🇬🇧</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français 🇫🇷</button>
+</div>
 
-<input type="file" id="imageInput" onchange="previewImage()" hidden>
+<!-- UPLOAD SECTION -->
+<div class="upload-container">
 
-<p id="fileText">No file chosen</p>
+    <label for="imageInput" class="upload-btn" id="uploadImage">
+        📁 Upload Image
+    </label>
 
-<br><br>
+    <input type="file" id="imageInput" onchange="previewImage()" hidden>
 
-<img id="preview" width="200">
+    <p id="fileText">No file chosen</p>
 
-<br><br>
+    <!-- PREVIEW BOX -->
+    <div class="preview-box">
+        <img id="preview" width="220">
+    </div>
 
-<button onclick="analyzeImage()" id="analyzeBtn">
-    Analyze 🌱
-</button>
+    <!-- ANALYZE BUTTON -->
+    <button onclick="analyzeImage()" id="analyzeBtn">
+        🌱 Analyze Image
+    </button>
 
-<div id="result"></div>
+    <!-- RESULT -->
+    <div id="result"></div>
 
-<br>
-<a href="index.html" id="backHome">⬅ Back Home</a>
+</div>
 
-<script src="script.js"></script>
+<!-- BACK BUTTON -->
+<div class="back-container">
+    <a href="index.html" id="backHome" class="back-btn">⬅ Back Home</a>
+</div>
+
+<script src="assets/script.js"></script>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>🌾 AgriSmart</h3>
+            <p>Smart agriculture platform helping farmers in Togo make better decisions using technology.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a><br>
+            <a href="weather.html">Weather</a><br>
+            <a href="crop.html">Crops</a><br>
+            <a href="prices.html">Prices</a><br>
+            <a href="forum.html">Forum</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Lomé, Togo</p>
+            <p>📧 support@agrismart.com</p>
+            <p>📞 +228 79 56 07 98</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 AgriSmart. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>

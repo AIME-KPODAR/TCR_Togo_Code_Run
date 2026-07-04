@@ -2,124 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About AgriSmart</title>
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
 
-<h1 id="aboutTitle">ℹ️About AgriSmart</h1>
-<p id="aboutText1">
-AgriSmart is a smart digital agriculture platform designed to support farmers in Togo by providing essential tools for decision-making. 
-The platform integrates weather forecasting, crop management guidance, market price tracking, and disease detection into one simple and accessible system.
-</p>
+<!-- HEADER AGRISMART -->
+<header class="page-header">
+    <h1 id="aboutTitle">ℹ️ About AgriSmart</h1>
+    <p>Smart agriculture platform for farmers in Togo</p>
+</header>
 
-<p id="aboutText2">
-The goal of AgriSmart is to bridge the gap between traditional farming practices and modern technology, helping farmers increase productivity, reduce risks, and improve their overall livelihood.
-</p>
+<!-- LANGUAGE SWITCH -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">English 🇬🇧</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français 🇫🇷</button>
+</div>
 
-<hr>
+<!-- CONTENT CONTAINER -->
+<div class="about-container">
 
-<h2 id="backgroundTitle">🌍Background and Problem Statement</h2>
-<p id="backgroundText1">
-Agriculture plays a major role in the economy of Togo, employing a large percentage of the population. 
-However, many farmers still face serious challenges that affect their productivity and income.
-</p>
+    <div class="about-card">
+        <h2>🌾 Overview</h2>
+        <p>
+            AgriSmart is a smart digital agriculture platform designed to support farmers in Togo by providing essential tools for decision-making. 
+            It integrates weather forecasting, crop management guidance, market price tracking, and disease detection in one system.
+        </p>
+        <p>
+            The goal is to bridge traditional farming and modern technology to improve productivity and reduce risks.
+        </p>
+    </div>
 
-<p id="backgroundText2">
-One of the biggest issues is the lack of access to reliable and timely information. Farmers often depend on guesswork or outdated knowledge when making important decisions about planting, harvesting, and selling their crops.
-</p>
+    <div class="about-card">
+        <h2>🌍 Background & Challenges</h2>
+        <p>
+            Agriculture is a key sector in Togo, but farmers face many challenges such as lack of information, climate uncertainty, crop diseases, and unstable market prices.
+        </p>
+        <p>
+            These issues often lead to low productivity and financial instability.
+        </p>
+    </div>
 
-<p id="backgroundText3">
-Climate change has also made weather patterns unpredictable, increasing the risk of crop failure. 
-In addition, farmers struggle to identify crop diseases early, leading to significant losses.
-</p>
+    <div class="about-card">
+        <h2>💡 Proposed Solution</h2>
+        <p>
+            AgriSmart provides real-time agricultural information in a simple and accessible platform.
+            It helps farmers make better decisions based on data instead of guesswork.
+        </p>
+    </div>
 
-<p id="backgroundText4">
-Market access is another major problem. Farmers often do not know the current market prices of their crops, which leads to poor selling decisions and reduced profits.
-</p>
+    <div class="about-card">
+        <h2>⚙️ Key Features</h2>
+        <ul>
+            <li>🌦️ Weather Forecast with farming advice</li>
+            <li>🌱 Crop Guide with planting instructions</li>
+            <li>💰 Market Price tracking system</li>
+            <li>🦠 Disease Detection using image analysis</li>
+        </ul>
+    </div>
 
-<p id="backgroundText5">
-These combined challenges result in low agricultural productivity, financial instability, and food insecurity.
-</p>
+    <div class="about-card">
+        <h2>🚀 Expected Impact</h2>
+        <ul>
+            <li>Increased crop productivity</li>
+            <li>Reduced farming risks</li>
+            <li>Better disease management</li>
+            <li>Improved farmer income</li>
+        </ul>
+    </div>
 
-<hr>
+    <div class="about-card">
+        <h2>🌍 Future Development</h2>
+        <ul>
+            <li>AI-powered disease detection</li>
+            <li>Real-time weather API integration</li>
+            <li>Offline mode for rural areas</li>
+            <li>Support for local languages</li>
+        </ul>
+    </div>
 
-<h2 id="solutionTitle">💡Proposed Solution</h2>
+    <div class="about-card">
+        <h2>🙏 Conclusion</h2>
+        <p>
+            AgriSmart modernizes agriculture in Togo by combining technology and farming needs to improve productivity and livelihoods.
+        </p>
+    </div>
 
-<p id="solutionText1">
-AgriSmart addresses these problems by providing a centralized platform where farmers can access critical agricultural information in real time.
-</p>
+</div>
 
-<p id="solutionText2">
-The platform is designed to be simple, user-friendly, and accessible on both mobile and web devices, ensuring that even farmers with limited technical knowledge can use it effectively.
-</p>
 
-<p id="solutionText3">
-AgriSmart combines multiple features into one system, allowing farmers to make informed decisions based on accurate data rather than guesswork.
-</p>
 
-<hr>
+<script src="/assetsscript.js"></script>
 
-<h2 id="featuresTitle">⚙️ System Features</h2>
+<!-- BACK HOME -->
+<div class="back-container">
+    <a href="index.html" class="back-btn">⬅ Back Home</a>
+</div>
 
-<ul>
-    <li id="feature1"><b>🌦️ Weather Forecast Module:</b> Provides daily weather updates along with farming advice to help farmers plan their activities.</li>
+<footer class="footer">
+    <div class="footer-container">
 
-    <li id="feature2"><b>🌱 Crop Guide Module:</b> Offers detailed information about different crops, including planting seasons, care instructions, and best practices.</li>
+        <div class="footer-box">
+            <h3>🌾 AgriSmart</h3>
+            <p>Smart agriculture platform helping farmers in Togo make better decisions using technology.</p>
+        </div>
 
-    <li id="feature3"><b>💰 Market Price Module:</b> Displays current market prices of crops to help farmers make better selling decisions.</li>
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a><br>
+            <a href="weather.html">Weather</a><br>
+            <a href="crop.html">Crops</a><br>
+            <a href="prices.html">Prices</a><br>
+            <a href="forum.html">Forum</a>
+        </div>
 
-    <li id="feature4"><b>🌿 Disease Detection Module:</b> Allows farmers to upload images of crops and receive possible disease diagnoses along with treatment suggestions.</li>
-</ul>
-<hr>
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Lomé, Togo</p>
+            <p>📧 support@agrismart.com</p>
+            <p>📞 +228 79 56 07 98</p>
+        </div>
 
-<h2 id="impactTitle">🚀Expected Impact</h2>
+    </div>
 
-<p id="impactText1">
-AgriSmart has the potential to significantly improve the agricultural sector in Togo by empowering farmers with knowledge and digital tools.
-</p>
-
-<p id="impactText2">
-The expected benefits include:
-</p>
-
-<ul>
-<li id="impactText3">Increased agricultural productivity and crop yield</li>
-<li id="impactText4">Reduction in losses caused by poor weather decisions</li>
-<li id="impactText5">Improved ability to detect and treat crop diseases early</li>
-<li id="impactText6">Better financial outcomes through informed market decisions</li>
-<li id="impactText7">Improved quality of life for farming families</li>
-</ul>
-
-<hr>
-
-<h2 id="sustainabilityTitle">🌍 Sustainability and Future Development</h2>
-
-<p id="sustainabilityText1">
-AgriSmart is designed to be scalable and sustainable. In the future, the platform can be expanded with more advanced technologies and features.
-</p>
-
-<ul>
-<li id="sustainabilityText2">Integration with real-time weather APIs</li>
-<li id="sustainabilityText3">Advanced AI-based disease detection models</li>
-<li id="sustainabilityText4">Support for local languages to reach more farmers</li>
-<li id="sustainabilityText5">Offline functionality for rural areas with limited internet access</li>
-<li id="sustainabilityText6">Community features to connect farmers and share knowledge</li>
-</ul>
-
-<hr>
-
-<h2 id="conclusionTitle">🙏 Conclusion</h2>
-
-<p id="conclusionText1">
-AgriSmart represents a step toward modernizing agriculture in Togo by combining technology with real farming needs. 
-By providing farmers with the right information at the right time, the platform aims to increase productivity, reduce risks, and improve livelihoods.
-</p>
-
-<p id="conclusionText2">
-This project demonstrates how simple technological solutions can create meaningful impact in developing communities.
-</p>
-<script src="script.js"></script>
+    <div class="footer-bottom">
+        <p>© 2026 AgriSmart. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>

@@ -2,41 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriSmart - Market Prices</title>
-    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<h1 id="priceTitle">💰 Market Prices</h1>
-<p id="priceSubtitle">Live crop price estimates in Togo 📊</p>
+<!-- HEADER AGRISMART -->
+<header class="page-header">
+    <h1 id="priceTitle">💰 Market Prices</h1>
+    <p id="priceSubtitle">Live crop price estimates in Togo 📊</p>
+</header>
 
-<button onclick="highlightCheap()" id="highlightBtn">
-    Highlight Prices 📊
-</button>
-
-<div class="price-card">
-    <h2 id="maizeName">🌽 Maize</h2>
-    <p id="maizePrice">Price: 250 - 300 FCFA per kg</p>
+<!-- LANGUAGE SWITCH -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">English 🇬🇧</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français 🇫🇷</button>
 </div>
 
-<div class="price-card">
-    <h2 id="riceName">🌾 Rice</h2>
-    <p id="ricePrice">Price: 400 - 600 FCFA per kg</p>
+<!-- ACTION BUTTON -->
+<div class="action-bar">
+    <button onclick="highlightCheap()" id="highlightBtn">
+        📊 Highlight Best Prices
+    </button>
 </div>
 
-<div class="price-card">
-    <h2 id="cassavaName">🥔 Cassava</h2>
-    <p id="cassavaPrice">Price: 150 - 200 FCFA per kg</p>
+<!-- PRICES GRID -->
+<div class="card-container">
+
+    <div class="price-card" data-price="275">
+        <h2>🌽 Maize</h2>
+        <p>250 - 300 FCFA / kg</p>
+    </div>
+
+    <div class="price-card" data-price="500">
+        <h2>🌾 Rice</h2>
+        <p>400 - 600 FCFA / kg</p>
+    </div>
+
+    <div class="price-card" data-price="175">
+        <h2>🥔 Cassava</h2>
+        <p>150 - 200 FCFA / kg</p>
+    </div>
+
+    <div class="price-card" data-price="650">
+        <h2>🥜 Groundnut</h2>
+        <p>500 - 800 FCFA / kg</p>
+    </div>
+
 </div>
 
-<div class="price-card">
-    <h2 id="groundnutName">🥜 Groundnut</h2>
-    <p id="groundnutPrice">Price: 500 - 800 FCFA per kg</p>
+<!-- BACK BUTTON -->
+<div class="back-container">
+    <a href="index.html" class="back-btn">⬅ Back Home</a>
 </div>
 
-<br>
+<script src="assets/script.js"></script>
 
-<a href="index.html">⬅ Back Home</a>
-<script src="script.js"></script>
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>🌾 AgriSmart</h3>
+            <p>Smart agriculture platform helping farmers in Togo make better decisions using technology.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a><br>
+            <a href="weather.html">Weather</a><br>
+            <a href="crop.html">Crops</a><br>
+            <a href="prices.html">Prices</a><br>
+            <a href="forum.html">Forum</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Lomé, Togo</p>
+            <p>📧 support@agrismart.com</p>
+            <p>📞 +228 79 56 07 98</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 AgriSmart. All rights reserved.</p>
+    </div>
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - AgriSmart</title>
+     <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="contact-header">
+        <h1 id="title">Contact AgriSmart 📩</h1>
+        <p id="subtitle">We are here to help farmers in Togo and beyond</p>
+    </header>
+
+<!-- LANGUAGE SWITCH -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">English 🇬🇧</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français 🇫🇷</button>
+</div>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-container">
+
+        <!-- FORM -->
+        <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+
+            <label for="name" id="nameLabel">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email" id="emailLabel">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="subject" id="subjectLabel">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+
+            <label for="message" id="messageLabel">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+
+            <button type="submit" id="sendBtn">Send Message</button>
+
+        </form>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+            <h2>📍 Our Info</h2>
+
+            <p>📧 Email: support@agrismart.com</p>
+            <p>📞 Phone: +228 79 56 07 98</p>
+            <p>📍 Location: Lomé, Togo</p>
+
+            <h3>🌍 Follow Us</h3>
+            <p>Facebook | WhatsApp | Instagram</p>
+        </div>
+
+    </section>
+
+    <!-- BACK HOME -->
+<div class="back-container">
+    <a href="index.html" class="back-btn">⬅ Back Home</a>
+</div>
+
+    <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>🌾 AgriSmart</h3>
+            <p>Smart agriculture platform helping farmers in Togo make better decisions using technology.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a><br>
+            <a href="weather.html">Weather</a><br>
+            <a href="crop.html">Crops</a><br>
+            <a href="prices.html">Prices</a><br>
+            <a href="forum.html">Forum</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Lomé, Togo</p>
+            <p>📧 support@agrismart.com</p>
+            <p>📞 +228 79 56 07 98</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 AgriSmart. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

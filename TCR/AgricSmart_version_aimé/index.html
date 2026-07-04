@@ -4,19 +4,14 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>AgriSmart</title>
-        <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="assets/css/style.css">
     </head>
     <body>
 
-        <!-- LANGUAGE BUTTON -->
-       <div class="language-switcher">
-    <button class="lang-btn active" onclick="setLanguage('fr')">
-        🇫🇷 Français
-    </button>
-
-    <button class="lang-btn" onclick="setLanguage('en')">
-        🇬🇧 English
-    </button>
+   <!-- LANGUAGE SWITCH -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">English 🇬🇧</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français 🇫🇷</button>
 </div>
 
         <!-- TITLE -->
@@ -29,12 +24,12 @@
         <!-- SLIDER -->
         <div class="slider">
             <div class="slides">
-                <img src="images/Agricultura-paga-RD-334-millones-a-productores-de-habichuelas-de-San-Juan.jpg" alt="Agriculture">
-                <img src="images/agriculture4.jpg" alt="Récolte">
-                <img src="images/viai_news_02.20.jpg" alt="Agriculteurs">
-                 <img src="images/Agricultural-Biodiversity.jpg" alt="Agriculture">
-                <img src="images/definicion-de-la-palabra-agricultura.webp" alt="Récolte">
-                <img src="images/R.jpg" alt="Agriculteurs">
+                <img src="assets/images/Agricultura-paga-RD-334-millones-a-productores-de-habichuelas-de-San-Juan.jpg" alt="Agriculture">
+                <img src="assets/images/agriculture4.jpg" alt="Récolte">
+                <img src="assets/images/viai_news_02.20.jpg" alt="Agriculteurs">
+                 <img src="assets/images/Agricultural-Biodiversity.jpg" alt="Agriculture">
+                <img src="assets/images/definicion-de-la-palabra-agricultura.webp" alt="Récolte">
+                <img src="assets/images/R.jpg" alt="Agriculteurs">
             </div>
         </div>
 
@@ -54,7 +49,38 @@
             <a href="forum.html" class="card" id="forumText">Farmer Community</a>
         </div>
 
-        <script src="script.js"></script>
+        <script src="assets/script.js"></script>
+
+        <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>🌾 AgriSmart</h3>
+            <p>Smart agriculture platform helping farmers in Togo make better decisions using technology.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a><br>
+            <a href="weather.html">Weather</a><br>
+            <a href="crop.html">Crops</a><br>
+            <a href="prices.html">Prices</a><br>
+            <a href="forum.html">Forum</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Lomé, Togo</p>
+            <p>📧 support@agrismart.com</p>
+            <p>📞 +228 79 56 07 98</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 AgriSmart. All rights reserved.</p>
+    </div>
+</footer>
 
     </body>
 </html>

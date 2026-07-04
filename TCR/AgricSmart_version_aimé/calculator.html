@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriSmart - Weather</title>
+    <title>Farm Calculator - AgriSmart</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
+
+
 <body>
 
-<!-- HEADER STYLE AGRISMART -->
-<header class="page-header">
-    <h1 id="weatherMain">🌦️ Weather Forecast</h1>
-    <p id="weatherSubtitle">Plan your farming activities with weather insights</p>
-</header>
+    <!-- HEADER -->
+    <header class="calc-header">
+        <h1>🌾 Farm Calculator</h1>
+        <p>Estimate your crop production easily</p>
+    </header>
 
 <!-- LANGUAGE SWITCH -->
 <div class="language-switcher">
@@ -21,54 +22,47 @@
     <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français 🇫🇷</button>
 </div>
 
-<!-- WEATHER DISPLAY -->
-<div class="weather-container">
+    <!-- CALCULATOR BOX -->
+    <div class="calc-container">
 
-    <div class="weather-box">
-        <h2 id="weatherTitle">Select a day 🌤️</h2>
-        <p id="temp">Temperature will appear here</p>
+        <label for="area">Field Area (hectares)</label>
+        <input type="number" id="area" placeholder="e.g. 2">
+
+        <label for="yield">Yield per hectare (tons)</label>
+        <input type="number" id="yield" placeholder="e.g. 3">
+
+        <button onclick="calculateProduction()">Calculate</button>
+
+        <div class="result">
+            <h2>Result:</h2>
+            <p id="output">--</p>
+        </div>
+
     </div>
 
-    <div class="advice-box">
-        <h2 id="adviceTitle">🌱 Farming Advice</h2>
-        <p id="advice">Click a day to see farming advice</p>
-    </div>
+    <script>
+        function calculateProduction() {
+            let area = parseFloat(document.getElementById("area").value);
+            let yieldPerHa = parseFloat(document.getElementById("yield").value);
 
-</div>
+            if (isNaN(area) || isNaN(yieldPerHa)) {
+                document.getElementById("output").innerText = "Please enter valid values";
+                return;
+            }
 
-<!-- FORECAST CARDS -->
-<h3 class="section-title">📅 3-Day Forecast</h3>
+            let total = area * yieldPerHa;
 
-<div class="forecast-container">
+            document.getElementById("output").innerText =
+                total.toFixed(2) + " tons estimated production";
+        }
+    </script>
 
-    <div class="forecast-card" onclick="changeWeather('day1')">
-        ☀️ <h3>Day 1</h3>
-        <p>Sunny</p>
-        <p>31°C</p>
-    </div>
-
-    <div class="forecast-card" onclick="changeWeather('day2')">
-        🌧️ <h3>Day 2</h3>
-        <p>Rainy</p>
-        <p>27°C</p>
-    </div>
-
-    <div class="forecast-card" onclick="changeWeather('day3')">
-        ☁️ <h3>Day 3</h3>
-        <p>Cloudy</p>
-        <p>28°C</p>
-    </div>
-
-</div>
-
-<!-- BACK HOME -->
+    <!-- BACK HOME -->
 <div class="back-container">
     <a href="index.html" class="back-btn">⬅ Back Home</a>
 </div>
 
-<script src="assets/js/script.js"></script>
-
-<footer class="footer">
+    <footer class="footer">
     <div class="footer-container">
 
         <div class="footer-box">
@@ -100,6 +94,4 @@
 </footer>
 
 </body>
-
-
 </html>

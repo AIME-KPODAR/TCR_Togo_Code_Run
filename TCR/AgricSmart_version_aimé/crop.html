@@ -2,45 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriSmart - Crop Guide</title>
-    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- HEADER -->
-<h1 id="cropTitle">🌾 Crop Guide</h1>
+<!-- HEADER (style AgriSmart) -->
+<header class="page-header">
+    <h1 id="cropTitle">🌾 Crop Guide</h1>
+    <p id="cropSubtitle">
+        Search for crops and learn how to grow them better in Togo
+    </p>
+</header>
 
-<p id="cropSubtitle">
-Search for crops and learn how to grow them better in Togo
-</p>
-
-
-<input type="text" id="searchBox"
-placeholder="Search crop (maize, rice, cassava...)"
-onkeyup="searchCrop()">
-
-<div class="crop-card">
-    <h2 id="maizeName">🌽 Maize</h2>
-    <p id="maizeSeason">Season: Rainy season</p>
-    <p id="maizeAdvice">Advice: Use fertilizer after 2 weeks</p>
+<!-- LANGUAGE SWITCH -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">English 🇬🇧</button>
+    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">Français 🇫🇷</button>
 </div>
 
-<div class="crop-card">
-    <h2 id="riceName">🌾 Rice</h2>
-    <p id="riceSeason">Season: Wet lands</p>
-    <p id="riceAdvice">Advice: Needs constant water</p>
+<!-- SEARCH -->
+<div class="search-box">
+    <input type="text" id="searchBox"
+        placeholder="🔎 Search crop (maize, rice, cassava...)"
+        onkeyup="searchCrop()">
 </div>
 
-<div class="crop-card">
-    <h2 id="cassavaName">🥔 Cassava</h2>
-    <p id="cassavaSeason">Season: All year</p>
-    <p id="cassavaAdvice">Advice: Resistant to drought</p>
+<!-- CROPS GRID -->
+<div id="cropList" class="card-container">
+
+    <div class="card-box " data-name="maize">
+        <h2>🌽 Maize</h2>
+        <p><strong>Season:</strong> Rainy season</p>
+        <p><strong>Advice:</strong> Use fertilizer after 2 weeks</p>
+    </div>
+
+    <div class="card-box " data-name="rice">
+        <h2>🌾 Rice</h2>
+        <p><strong>Season:</strong> Wet lands</p>
+        <p><strong>Advice:</strong> Needs constant water</p>
+    </div>
+
+    <div class="card-box " data-name="cassava">
+        <h2>🥔 Cassava</h2>
+        <p><strong>Season:</strong> All year</p>
+        <p><strong>Advice:</strong> Resistant to drought</p>
+    </div>
+
 </div>
 
-<br>
-<a href="index.html">⬅ Back Home</a>
+<!-- BACK BUTTON -->
+<div class="back-container">
+    <a href="index.html" class="back-btn">⬅ Back Home</a>
+</div>
 
-<script src="script.js"></script>
+<script src="assets/script.js"></script>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h3>🌾 AgriSmart</h3>
+            <p>Smart agriculture platform helping farmers in Togo make better decisions using technology.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a><br>
+            <a href="weather.html">Weather</a><br>
+            <a href="crop.html">Crops</a><br>
+            <a href="prices.html">Prices</a><br>
+            <a href="forum.html">Forum</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Lomé, Togo</p>
+            <p>📧 support@agrismart.com</p>
+            <p>📞 +228 79 56 07 98</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 AgriSmart. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>
